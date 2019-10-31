@@ -40,3 +40,61 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+const navList = document.querySelectorAll('a');
+navList.forEach((element, i) => element.textContent = Object.values(siteContent['nav'])[i])
+
+const ctaHead = document.querySelector('.cta h1');
+ctaHead.textContent = siteContent['cta']['h1'];
+
+const firstPart = "DOM";
+const secondPart = "is";
+const lastPart = "Awesome";
+
+ctaHead.innerHTML = firstPart + "<br />" + secondPart + "<br />" + lastPart;
+
+const ctaButton = document.querySelector('.cta-text button');
+ctaButton.textContent = siteContent.cta.button;
+
+const ctaImg = document.getElementById('cta-img');
+ctaImg.setAttribute('src', siteContent["cta"]["img-src"]);
+
+const contentH4 = document.querySelectorAll('.main-content h4');
+console.log(contentH4);
+contentH4[0].textContent = siteContent['main-content']['features-h4'];
+contentH4[1].textContent = siteContent['main-content']['about-h4'];
+contentH4[2].textContent = siteContent['main-content']['services-h4'];
+contentH4[3].textContent = siteContent['main-content']['product-h4'];
+contentH4[4].textContent = siteContent['main-content']['vision-h4'];
+
+const contentP = document.querySelectorAll('.main-content p');
+contentP[0].textContent = siteContent['main-content']['features-content'];
+contentP[1].textContent = siteContent['main-content']['about-content'];
+contentP[2].textContent = siteContent['main-content']['services-content'];
+contentP[3].textContent = siteContent['main-content']['product-content'];
+contentP[4].textContent = siteContent['main-content']['vision-content'];
+
+const middleImg = document.getElementById('middle-img');
+middleImg.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+navList.forEach((element) => element.style.color = 'green');
+
+const newNavFirst = document.createElement("a");
+newNavFirst.textContent = "Hello" ;
+const newNavLast = document.createElement("a");
+newNavLast.textContent = "Bye" ;
+
+const parentElement = document.querySelector('nav');
+parentElement.prepend(newNavFirst);
+parentElement.append(newNavLast);
+newNavFirst.style.color = 'green'
+newNavLast.style.color = 'green'
+
+const contactH4 = document.querySelector('.contact h4');
+contactH4.textContent = siteContent['contact']['contact-h4'];
+
+const contactInfo = document.querySelectorAll('.contact p');
+contactInfo.forEach((element, i) => element.textContent = Object.values(siteContent['contact'])[i+1])
+
+const footerP = document.querySelector('footer p');
+footerP.textContent = siteContent['footer']['copyright'];
