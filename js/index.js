@@ -47,6 +47,12 @@ navList.forEach((element, i) => element.textContent = Object.values(siteContent[
 const ctaHead = document.querySelector('.cta h1');
 ctaHead.textContent = siteContent['cta']['h1'];
 
+const firstPart = "DOM";
+const secondPart = "is";
+const lastPart = "Awesome";
+
+ctaHead.innerHTML = firstPart + "<br />" + secondPart + "<br />" + lastPart;
+
 const ctaButton = document.querySelector('.cta-text button');
 ctaButton.textContent = siteContent.cta.button;
 
